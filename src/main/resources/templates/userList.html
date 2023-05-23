@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/common :: head ('Пользователи')"></head>
+<body>
+<nav th:replace="fragments/navbar :: navbar"></nav>
+<div class="container mt-5">
+    List of users:
+    <table>
+        <thead>
+        <th>Username</th>
+        <th>Roles</th>
+        <th></th>
+        </thead>
+        <tbody>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.username}">Username</td>
+            <td>
+                <span th:text="${#strings.listJoin(user.roles, ', ')}">Role</span>
+            </td>
+            <td><a th:href="@{|/user/${user.id}|}">edit</a></td>
+        </tbody>
+    </table>
+</div>
+<footer th:replace="fragments/common :: footer"></footer>
+</body>
+</html>

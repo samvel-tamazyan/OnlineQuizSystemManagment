@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/common :: head ('Регистрация')"></head>
+<body>
+<nav th:replace="fragments/navbar :: navbar"></nav>
+<div class="container mt-5">
+    <div th:replace="fragments/login :: login (user = ${user}, path = @{/registration}, btnValue = 'Sign Up', isRegisterForm = true)"></div>
+</div>
+<footer th:replace="fragments/common :: footer"></footer>
+</body>
+</html>
